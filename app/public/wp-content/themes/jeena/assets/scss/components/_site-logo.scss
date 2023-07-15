@@ -1,0 +1,14 @@
+/** ===== Site Logo ===== **/
+.jeena-site-logo {
+    font: {
+        family: var(--jeena-secondary-font);
+        size: 32px;
+        weight: 600;
+    }
+    line-height: 1.3;
+
+    a {
+        max-width: 150px;
+        color: var(--jeena-headline-color);
+    }
+}

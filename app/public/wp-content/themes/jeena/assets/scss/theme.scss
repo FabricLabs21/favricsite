@@ -1,0 +1,32 @@
+/*
+Theme Name: Jeena
+Theme URI: https://demo.webtend.net/wp/jeena
+Description: Technology & IT Solutions WordPress
+Author: Webtend
+Author URI: https://themeforest.net/user/webtend
+Version: 1.0.1
+Requires PHP: 7.0
+License: GNU General Public License version 3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, featured-images, post-formats, translation-ready
+Text Domain: jeena
+*/
+
+@import "abstracts/mixins";
+@import "abstracts/breakpoints";
+@import "base/common";
+@import "base/input-field";
+@import "base/layout";
+@import "base/keyframes";
+@import "base/wp-reset";
+@import "base/header";
+@import "base/footer";
+@import "post/entry-post";
+@import "post/entry-post-details";
+@import "post/comments";
+@import "post/widget";
+@import "post/page-title";
+@import "post/pagination";
+@import "post/error-page";
+@import "components/*";
+@import "woocommerce/*"

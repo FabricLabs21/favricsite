@@ -1,0 +1,212 @@
+/** ===== Entry Post ===== **/
+.entry-post {
+    display: flex;
+    line-height: 1;
+    margin-bottom: 30px;
+
+    @include respond-below(lg) {
+        flex-direction: column;
+    }
+
+    .entry-media {
+        flex: 0 0 45%;
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+        position: relative;
+
+        @include respond-below(lg) {
+            height: 420px;
+            flex: 0 0 auto;
+            max-width: 100%;
+        }
+
+        @include respond-below(md) {
+            height: 320px;
+        }
+
+        @include respond-below(c480) {
+            height: 240px;
+        }
+
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-position: center;
+            object-fit: cover;
+        }
+    }
+
+    .entry-summary {
+        width: 100%;
+        flex-grow: 1;
+        padding: 40px;
+        background-color: var(--jeena-white-color);
+        box-shadow: 0px 10px 60px 0px rgba(223, 223, 223, 0.5);
+
+        @include respond-between(lg, xl) {
+            padding: 30px;
+        }
+
+        @include respond-below(c480) {
+            padding: 30px;
+        }
+    }
+
+    .post-categories {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 10px;
+
+        li {
+            margin: 0 10px 10px 0;
+        }
+
+        a {
+            font: {
+                family: var(--jeena-secondary-font);
+                size: 14px;
+                weight: 500;
+            }
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: var(--jeena-body-color);
+            border: 1px solid var(--jeena-border-color);
+            border-radius: 5px;
+            padding: 8px 18px;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: var(--jeena-secondary-color);
+                border-color: var(--jeena-secondary-color);
+                color: var(--jeena-headline-color);
+            }
+
+            @include respond-below(c480) {
+                font-size: 13px;
+                padding: 8px 10px;
+            }
+        }
+    }
+
+    .post-title {
+        font-size: 24px;
+        line-height: 1.4;
+        margin-bottom: 25px;
+
+        @include respond-between(lg, xl) {
+            font-size: 22px;
+        }
+
+        @include respond-below(md) {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        @include respond-below(c480) {
+            font-size: 20px;
+        }
+
+        a {
+            display: inherit
+        }
+    }
+
+    p {
+        margin: 0;
+        line-height: 2;
+
+        @include respond-between(lg, xl) {
+            font-size: 15px;
+        }
+    }
+
+    .post-author-date {
+        display: flex;
+        align-items: flex-end;
+        font: {
+            size: 16px;
+            family: var(--jeena-secondary-font);
+        }
+        color: var(--jeena-body-color);
+        margin-top: 30px;
+
+        @include respond-below(c480) {
+            font-size: 15px;
+        }
+
+        .author {
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-right: 35px;
+        }
+
+        i {
+            margin-right: 5px;
+        }
+    }
+
+    .line {
+        display: block;
+        margin: 30px 0;
+        height: 1px;
+        background-color: var(--jeena-border-color);
+    }
+
+    .read-more {
+        font: {
+            size: 16px;
+            weight: 700;
+        }
+        line-height: 1.2;
+        color: var(--jeena-headline-color);
+
+        span {
+            text-decoration: underline;
+        }
+
+        i  {
+            padding-left: 10px;
+            position: relative;
+            top: 1px;
+        }
+
+        &:hover {
+            color: var(--jeena-primary-color);
+        }
+
+        @include respond-below(c480) {
+            font-size: 15px;
+        }
+    }
+
+    &.sticky {
+        .entry-summary {
+            box-shadow: none;
+            background-color: var(--jeena-light-color);
+            border-right: 4px solid var(--jeena-primary-color);
+        }
+    }
+}
+
+.no-sidebar {
+    .entry-post {
+        .entry-summary {
+            padding: 60px;
+
+            @include respond-below(xl) {
+                padding: 40px;
+            }
+
+            @include respond-below(c480) {
+                padding: 30px;
+            }
+        }
+    }
+}

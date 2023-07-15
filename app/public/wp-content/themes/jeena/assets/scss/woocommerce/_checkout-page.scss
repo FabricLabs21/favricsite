@@ -1,0 +1,248 @@
+/** ===== Checkout Page ===== **/
+.woocommerce-checkout {
+    .woocommerce-form-login {
+        border: none !important;
+        background-color: var(--jeena-light-color);
+        border-radius: 0;
+
+        input {
+            background-color: var(--jeena-white-color);
+        }
+    }
+
+    form.checkout_coupon {
+        border: none;
+        border-radius: 0;
+        background-color: var(--jeena-light-color);
+        margin: 0;
+        padding: 20px;
+
+        .form-row-first {
+            width: 50%;
+            padding-right: 30px;
+
+            @include respond-below(c480) {
+                padding-right: 0;
+                width: 100%;
+            }
+        }
+
+        .form-row-last {
+            width: 50%;
+
+            @include respond-below(c480) {
+                width: 100%;
+            }
+        }
+
+        input.input-text {
+            height: 50px;
+            background-color: var(--jeena-white-color);
+        }
+    }
+
+    #add_payment_method #payment,
+    #payment {
+        border-radius: 0;
+    }
+
+    #customer_details {
+        margin: 0 -15px;
+        width: inherit;
+
+        .col-1,
+        .col-2 {
+            width: 50%;
+            flex: inherit;
+            .col-1,
+            .col-2 {
+                padding: 0 15px;
+            }
+            max-width: 100%;
+        }
+
+        @include respond-below(md) {
+            margin: 0;
+
+            .col-1,
+            .col-2 {
+                width: 100%;
+            }
+        }
+
+        span.woocommerce-input-wrapper {
+            width: 100%;
+            display: block;
+        }
+
+        .woocommerce-billing-fields {
+            margin-bottom: 36px;
+
+            > h3 {
+                font-size: 24px;
+                margin-bottom: 18px;
+                text-transform: capitalize;
+            }
+        }
+
+        .woocommerce-additional-fields {
+            margin-bottom: 36px;
+
+            > h3 {
+                font-size: 24px;
+                margin-bottom: 18px;
+                text-transform: capitalize;
+            }
+        }
+
+        .woocommerce-shipping-fields {
+            #ship-to-different-address {
+                font-size: 24px;
+                cursor: pointer;
+                transition: 0.3s;
+
+                label {
+                    font-size: inherit;
+                    font-weight: inherit;
+                    font-family: inherit;
+                }
+
+                &:hover {
+                    color: var(--jeena-primary-color);
+                }
+
+                #ship-to-different-address-checkbox {
+                    position: absolute;
+                    opacity: 0;
+                }
+            }
+        }
+
+        #billing_country_field,
+        #shipping_country_field,
+        #billing_address_1_field,
+        #shipping_address_1_field,
+        #order_comments_field {
+            label {
+                display: none !important;
+            }
+
+            textarea {
+                padding: 18px 30px;
+            }
+        }
+    }
+
+    form.woocommerce-checkout {
+        padding-top: 30px;
+
+        #order_review_heading {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 18px;
+            text-transform: capitalize;
+        }
+
+        #order_review {
+            th {
+                font-weight: 500;
+                vertical-align: middle !important;
+
+                + td {
+                    border-left: 1px solid var(--jeena-border-color);
+                }
+            }
+
+            .product-total {
+                border-left: 1px solid var(--jeena-border-color);
+            }
+
+            .woocommerce-checkout-review-order-table {
+                margin-bottom: 50px;
+                border-right: none;
+                border-top: none;
+                border-bottom: none;
+
+                th {
+                    font-weight: 500;
+                }
+
+                th,
+                td {
+                    border-left: none;
+                    padding: 15px;
+                }
+
+                td.product-total,
+                .cart-subtotal td,
+                .order-total td {
+                    font: {
+                        size: 15px;
+                        weight: 600;
+                    }
+                    color: var(--jeena-headline-color);
+                    padding: 10px 15px;
+                }
+            }
+
+            #payment {
+                background-color: var(--jeena-light-color);
+
+                .about_paypal {
+                    margin-left: 10px;
+                }
+
+                .wc_payment_methods {
+                    padding: 30px;
+                    border-bottom: 1px solid var(--jeena-border-color);
+                }
+
+                .place-order {
+                    padding: 30px;
+                    margin: 0;
+                }
+
+                #place_order {
+                    float: none;
+                    margin-top: 10px;
+                    background-color: var(--jeena-primary-color);
+
+                    &:hover {
+                        color: var(--jeena-headline-color);
+                        background-color: var(--jeena-secondary-color);
+                    }
+                }
+            }
+        }
+    }
+
+    #payment {
+        .woocommerce-notice {
+            background-color: var(--jeena-white-color);
+        }
+
+        input[type=radio] {
+            width: 15px;
+            height: 15px;
+            position: relative;
+            top: 2px;
+        }
+
+        label {
+            color: var(--jeena-headline-color);
+            display: inline-block;
+            margin: 0 0 8px;
+        }
+
+        div.payment_box {
+            background-color: var(--jeena-white-color);
+
+            &::before {
+                border-color: var(--jeena-white-color);
+                border-right-color: transparent;
+                border-left-color: transparent;
+                border-top-color: transparent;
+            }
+        }
+    }
+}

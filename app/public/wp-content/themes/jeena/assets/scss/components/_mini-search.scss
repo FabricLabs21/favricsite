@@ -1,0 +1,121 @@
+/** ===== Mini Search ===== **/
+.jeena-search-form {
+    display: flex;
+
+    .search-submit {
+        padding: 0;
+        width: 80px;
+        flex: 0 0 80px;
+        height: 70px;
+
+        i {
+            margin: 0;
+        }
+    }
+}
+
+.jeena-search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .search-icon {
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+        color: var(--jeena-headline-color);
+        padding: 8px;
+    }
+
+    .jeena-search-canvas {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        width: 65%;
+        transition: 0.65s ease;
+        padding: 35px;
+        z-index: 99999;
+        transform: translate(-50%, -50%) scale(0.5);
+        opacity: 0;
+        visibility: hidden;
+
+        @include respond-below(lg) {
+            width: 80%;
+        }
+
+        @include respond-below(md) {
+            width: 100%;
+        }
+
+        @include respond-below(c480) {
+            padding: 30px;
+        }
+
+        .canvas-inner {
+            position: relative;
+        }
+
+        .search-close {
+            position: absolute;
+            color: var(--jeena-white-color);
+            right: 35px;
+            top: 0;
+            font-size: 25px;
+            line-height: 1;
+            padding: 5px;
+            cursor: pointer;
+
+            @include respond-below(c480) {
+                font-size: 20px;
+            }
+        }
+
+        input {
+            background-color: transparent;
+            border-bottom: 1px solid var(--jeena-white-color);
+            padding: 0;
+            color: var(--jeena-white-color);
+
+            &:focus {
+                border-color: transparent;
+                border-bottom-color: var(--jeena-white-color);
+            }
+
+            @include respond-below(c480) {
+                font-size: 15px;
+            }
+        }
+
+        button {
+            width: auto;
+            height: auto;
+            background-color: transparent;
+        }
+    }
+
+    .jeena-search-overly {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        transition: 0.55s ease;
+        background-color: #000000;
+        z-index: 99998;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &.show-search-canvas {
+        .jeena-search-canvas {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .jeena-search-overly {
+            opacity: 0.85;
+            visibility: visible;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+/** ===== Content Switcher ===== **/
+.jeena-content-switcher {
+    --switcher-width: 40px;
+    --switcher-height: 20px;
+
+    .switcher-btn-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+
+        .switcher-btns {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--jeena-primary-color);
+            border-radius: 0;
+            padding: 18px 40px;
+            line-height: 1;
+        }
+
+        .switch-btn {
+            color: var(--jeena-white-color);
+            font: {
+                size: 16px;
+                weight: 700;
+            }
+        }
+
+        .switcher-input-label {
+            position: relative;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: var(--switcher-width);
+            height: var(--switcher-height);
+            margin: 0 20px;
+        }
+
+        .switcher-checkbox {
+            width: 0;
+            height: 0;
+            opacity: 0;
+        }
+
+        .switcher-slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--jeena-white-color);
+            border-radius: 10px;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                width: var(--switcher-height);
+                height: var(--switcher-height);;
+                background-color: var(--jeena-secondary-color);
+                border-radius: 20px;
+                transition: 0.3s;
+                transition-duration: 300ms;
+            }
+        }
+
+        input:checked+.switcher-slider {
+            &::before {
+                transform: translateX( calc( var(--switcher-width) - var(--switcher-height) ) );
+            }
+        }
+    }
+
+    .switcher-content-container {
+        .switcher-content-wrap {
+            &:not(.active) {
+                display: none;
+            }
+        }
+    }
+}

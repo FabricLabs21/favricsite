@@ -1,0 +1,105 @@
+/** ===== Footer ===== **/
+.site-footer {
+    margin-top: auto;
+    --text-color: #b6bace;
+    --hover-text-color: #fff;
+
+    &.default-footer {
+        background-color: var(--jeena-dark-color);
+    }
+
+    .footer-widgets {
+        padding: 80px 0;
+
+        .footer-widget-wrap {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 30px;
+            grid-row-gap: 50px;
+
+            @include respond-below(lg) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include respond-below(md) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        .widget-title {
+            padding: 0;
+            border: none;
+            color: var(--jeena-white-color);
+        }
+
+        .widget {
+            &, a {
+                color: var(--text-color);
+            }
+
+            a {
+                &:hover {
+                    color: var(--hover-text-color);
+                }
+            }
+        }
+    }
+
+    .footer-copyright {
+        background-color: #0f1425;
+        font-size: 16px;
+        padding: 25px 0;
+        text-align: center;
+
+        p {
+            margin: 0;
+            color: var(--footer-text-color);
+        }
+    }
+}
+
+/** ===== Back to Top ===== **/
+.back-to-top {
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    width: 65px;
+    height: 55px;
+    border-radius: 55px 0 0 55px;
+    padding: 6px 5px 4px 5px;
+    text-align: left;
+    z-index: 20;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateX(130%);
+    transition: 0.4s;
+    background-color: var(--jeena-primary-color);
+
+    &:not(.show-on-mobile) {
+        @include respond-below( md ) {
+            display: none;
+        }
+    }
+
+    i {
+        content: "";
+        position: absolute;
+        top: 5px;
+        bottom: 5px;
+        left: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        width: 45px;
+        border-radius: 45px;
+        color: var(--jeena-primary-color);
+        background-color: var(--jeena-white-color);
+        z-index: 1;
+    }
+
+    &.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

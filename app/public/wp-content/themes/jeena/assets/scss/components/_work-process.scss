@@ -1,0 +1,176 @@
+/** ===== Work process ===== **/
+.jeena-work-process-box {
+    line-height: 1;
+    --shape-position: 30px;
+
+    .process-counter {
+        font: {
+            family: var(--jeena-secondary-font);
+            size: 22px;
+            weight: 600;
+        }
+        line-height: 1;
+        transition: 0.3s;
+        color: var(--jeena-white-color);
+        background-color: var(--jeena-primary-color);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 10px solid var(--jeena-white-color);
+        border-radius: 50%;
+    }
+
+    .process-content {
+        position: relative;
+        background-color: var(--jeena-light-color);
+        padding: 35px 30px;
+
+        &,
+        .process-title,
+        p {
+            transition: 0.3s;
+        }
+
+        p {
+            font: {
+                size: 16px;
+                weight: 400;
+            }
+            line-height: 1.7;
+            color: var(--jeena-body-color);
+            margin: 0;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: var(--shape-position);
+            bottom: 100%;
+            transition: 0.3s;
+            width: 20px;
+            height: 15px;
+            clip-path: polygon(100% 100%, 0% 0%, 0% 100%);
+            background-color: var(--jeena-light-color);
+        }
+    }
+
+    &:hover {
+        .process-counter {
+            background-color: var(--jeena-secondary-color);
+            color: var(--jeena-headline-color);
+        }
+    }
+
+    &.design-one {
+        .process-counter {
+            width: 80px;
+            height: 80px;
+            box-shadow: 0px 10px 60px 0px rgb(102 83 232 / 25%);
+            margin-bottom: 30px;
+            margin-left: 30px;
+        }
+
+        .process-content {
+            .process-title {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+        }
+
+        &:hover {
+            .process-content {
+                &,
+                &::before {
+                    background-color: var(--jeena-primary-color);
+                }
+
+                .process-title,
+                p {
+                    color: var(--jeena-white-color);
+                }
+            }
+        }
+    }
+
+    &.design-two {
+        position: relative;
+
+        .process-content {
+            margin-left: 45px;
+
+            &::before {
+                display: none;
+            }
+
+            .process-title {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+        }
+
+        .process-thumbnail {
+            margin-right: 45px;
+            position: relative;
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                transition: 0.3s;
+            }
+        }
+
+        .process-counter {
+            position: absolute;
+            z-index: 2;
+            right: 0;
+            bottom: 0;
+            transform: translate(50%, 50%);
+            height: 55px;
+            width: 55px;
+            border-width: 4px;
+            font-size: 18px;
+            box-shadow: 0px 10px 30px 0px rgba(102, 83, 232, 0.3);
+        }
+
+        &:hover {
+            .process-content {
+                background-color: var(--jeena-white-color);
+                box-shadow: 0px 10px 30px 0px rgba(103, 77, 243, 0.1);
+            }
+        }
+    }
+
+    &.text-right {
+        text-align: right;
+
+        &.design-two {
+            .process-content {
+                margin-left: 0;
+                margin-right: 45px;
+            }
+
+            .process-thumbnail {
+                margin-left: 45px;
+                margin-right: 0;
+            }
+
+            .process-counter {
+                right: auto;
+                left: 0;
+                transform: translate(-50%, 50%);
+            }
+        }
+
+        &.design-one {
+            .process-content {
+                &::before {
+                    left: auto;
+                    right: var(--shape-position);
+                    clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+                }
+            }
+        }
+    }
+}

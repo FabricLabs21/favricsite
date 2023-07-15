@@ -1,0 +1,213 @@
+/** ===== Products Loop ===== **/
+.woocommerce {
+    ul.products {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0px -15px !important;
+
+        li.product {
+            padding: 0 15px;
+            margin: 0 0 45px;
+            width: 100% !important;
+
+            @include respond-between(c480, lg) {
+                width: 50% !important;
+            }
+
+            @include respond-between(lg, xl) {
+                width: 33.333333% !important;
+            }
+
+            @include respond-above(xl) {
+                width: 25% !important;
+            }
+        }
+
+        &.columns-1 {
+            li.product {
+                width: 100% !important;
+            }
+        }
+
+        &.columns-2 {
+            li.product {
+                @include respond-above(lg) {
+                    width: 50% !important;
+                }
+            }
+        }
+
+        &.columns-3 {
+            li.product {
+                @include respond-above(lg) {
+                    width: 33.333333% !important;
+                }
+            }
+        }
+
+        &.columns-4 {
+            li.product {
+                @include respond-above(xl) {
+                    width: 25% !important;
+                }
+            }
+        }
+
+        &.columns-5 {
+            li.product {
+                @include respond-above(c1350) {
+                    width: 20% !important;
+                }
+            }
+        }
+
+        &.columns-6 {
+            li.product {
+                @include respond-above(c1350) {
+                    width: 16.666666% !important;
+                }
+            }
+        }
+
+        .product {
+            .woocommerce-product-inner {
+                text-align: center;
+                position: relative;
+
+                .product-thumbnail {
+                    overflow: hidden;
+                    position: relative;
+                    margin-bottom: 30px;
+
+                    img {
+                        width: 100%;
+                        transition: 0.3s;
+                        transform: scale(1);
+                    }
+
+                    .cart-button {
+                        position: absolute;
+                        position: absolute;
+                        left: 50%;
+                        bottom: 0;
+                        transform: translateX(-50%);
+                        z-index: 1;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: 0.3s;
+
+                        a.button,
+                        .wc-forward {
+                            padding: 12px 20px;
+                            font-size: 15px;
+                            line-height: 1;
+                            margin: 0;
+
+                            &.loading {
+                                opacity: 1;
+
+                                &::before {
+                                    position: absolute;
+                                    content: "";
+                                    left: 0;
+                                    top: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    z-index: 1;
+                                    background-color: var(--jeena-secondary-color);
+                                }
+
+                                &::after {
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    content: "\e01c" !important;
+                                    z-index: 2;
+                                    color: var(--jeena-headline-color);
+                                }
+                            }
+                        }
+
+                        a.button.added {
+                            opacity: 1;
+
+                            &::before {
+                                opacity: 0;
+                            }
+
+                            &::after {
+                                display: none;
+                            }
+                        }
+
+                        .wc-forward {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .product-thumbnail img {
+                        transform: scale(1.1);
+                    }
+
+                    .cart-button {
+                        opacity: 1;
+                        visibility: visible;
+                        bottom: 20px;
+                    }
+                }
+
+                .star-rating {
+                    margin: 0 auto 12px;
+                    font-size: 14px;
+                    color: #FF7800;
+
+                    &::before {
+                        color: #FF7800;
+                    }
+                }
+
+                .product-title {
+                    margin: 0 0 15px;
+                    font: {
+                        size: 20px;
+                    }
+                }
+
+                .price {
+                    margin: 0;
+                    font: {
+                        size: 18px;
+                        weight: 500;
+                    }
+                    line-height: 1;
+                    color: var(--jeena-body-color);
+
+                    del {
+                        text-decoration: line-through;
+                        opacity: 0.8;
+                        display: inline-flex;
+                    }
+
+                    ins {
+                        font-weight: inherit;
+                    }
+                }
+            }
+        }
+    }
+}

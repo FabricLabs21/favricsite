@@ -1,0 +1,21 @@
+version: '3'
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - 8080:80
+    volumes:
+      - ./favricsite2/app/public:/var/www/html
+    environment:
+      - WORDPRESS_DB_HOST=localhost
+      - WORDPRESS_DB_USER=root
+      - WORDPRESS_DB_PASSWORD=root
+      - WORDPRESS_DB_NAME=local
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=local

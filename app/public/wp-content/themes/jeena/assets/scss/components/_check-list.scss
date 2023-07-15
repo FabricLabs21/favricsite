@@ -1,0 +1,59 @@
+/** ===== Check List ===== **/
+ul.jeena-check-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 1;
+    --icon-space: 10px;
+
+    li {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 18px;
+        }
+
+        .list-icon {
+            color: var(--jeena-white-color);
+            background-color: var(--jeena-primary-color);
+            font-size: 13px;
+            padding: 6px;
+            border-radius: 50%;
+
+            .fa-check {
+                position: relative;
+                top: 1px;
+            }
+        }
+
+
+        .list-text {
+            color: var(--jeena-headline-color);
+            font: {
+                family: var(--jeena-secondary-font);
+                size: 16px;
+                weight: 600;
+            }
+            line-height: 1.4;
+        }
+    }
+
+    &.icon-left {
+        .list-icon {
+            margin-right: var(--icon-space);
+        }
+    }
+
+    &.icon-right {
+        li {
+            flex-direction: row-reverse;
+        }
+
+        .list-icon {
+            margin-left: var(--icon-space);
+        }
+    }
+}

@@ -1,0 +1,155 @@
+/** ===== Pricing Table ===== **/
+.jeena-pricing-table {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--jeena-white-color);
+    box-shadow: 0px 10px 60px 0px rgba(102, 83, 232, 0.1);
+    padding: 50px;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+
+    @include respond-below(xl) {
+        padding: 50px 35px;
+    }
+
+    .pricing-table-title {
+        font: {
+            family: var(--jeena-primary-font);
+            size: 20px;
+            weight: 600;
+        }
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    .pricing-table-subtitle {
+        color: var(--jeena-primary-color);
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .pricing-table-price {
+        margin-top: 20px;
+        display: flex;
+        align-items: flex-end;
+        font: {
+            family: var(--jeena-primary-font);
+            size: 42px;
+            weight: 600;
+        }
+        color: var(--jeena-headline-color);
+        line-height: 1;
+
+        @include respond-below(xl) {
+            font-size: 38px;
+        }
+
+        .pricing-table-period {
+            font: {
+                size: 16px;
+                weight: 500;
+            }
+            color: var(--jeena-body-color);
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+
+            &::before {
+                content: "/";
+                font-size: 20px;
+                color: var(--jeena-headline-color);
+            }
+        }
+    }
+
+    .pricing-features-list {
+        margin: 35px 0 0;
+        padding: 0;
+        list-style: none;
+        line-height: 1;
+
+        li {
+            &:not(.pricing-features-title) {
+                display: flex;
+                align-items: center;
+                margin-bottom: 12px;
+            }
+
+            &.pricing-features-title {
+                display: inline-block;
+                font: {
+                    family: var(--jeena-primary-font);
+                    size: 18px;
+                    weight: 600;
+                }
+                line-height: 1.2;
+                text-transform: capitalize;
+                color: var(--jeena-headline-color);
+                margin-bottom: 20px;
+                border-bottom: 1px solid var(--jeena-headline-color);
+            }
+
+            .feature-text {
+                font-size: 18px;
+                line-height: 1.5;
+
+                @include respond-below( xl ) {
+                    font-size: 16px;
+                }
+            }
+
+            .feature-icon {
+                margin-right: 10px;
+            }
+
+            i {
+                &.fa,
+                &.fas {
+                    font: {
+                        weight: 400;
+                        family: "Font Awesome 5 Pro";
+                    }
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+
+    .pricing-table-btn {
+        margin: 30px 0 0;
+
+        .jeena-button {
+            width: 100%;
+
+            .fa-long-arrow-right {
+                position: relative;
+                top: 1px;
+            }
+        }
+    }
+
+   .pricing-table-badge {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        transform: translateY(-50%);
+        z-index: 2;
+        background-color: #FF9C00;
+        color: var(--jeena-white-color);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 1;
+        border-radius: 5px;
+        padding: 10px 20px;
+    }
+
+    &.button-after-feature {
+        .pricing-table-btn {
+            order: 15;
+        }
+    }
+}
